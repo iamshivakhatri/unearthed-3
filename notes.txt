@@ -1,0 +1,2 @@
+installed cors
+removed static links
