@@ -2,6 +2,7 @@
 
 import React, {useState, useEffect} from 'react';
 import './GiftDetails.css'
+import {useParams} from 'react-router-dom';
 
 const GiftDetails = ({data}) => {
 
