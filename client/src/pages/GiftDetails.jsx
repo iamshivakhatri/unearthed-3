@@ -5,13 +5,23 @@ import './GiftDetails.css'
 import {useParams} from 'react-router-dom';
 
 const GiftDetails = ({data}) => {
+    const {id } = useParams();
+
 
     const [gift, setGift] = useState({id: 0, name: "", pricepoint: "", audience: "", image: "", description: "", submittedby: "", submittedon: ""})
 
 
     useEffect(() => {
 
-    }, []);
+        const fetchGiftById = async () => {
+            const response = await fetch(`http://localhost:3001/gifts/${id}`)
+            const data = await response.json();
+            setGift(data);
+        }
+        fetchGiftById()
+    }, [data, id]);
+
+   
 
 
     return (
